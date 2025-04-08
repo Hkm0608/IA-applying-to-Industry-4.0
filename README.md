@@ -64,15 +64,5 @@ Résultats
 Le modèle LSTM a obtenu de très bons résultats, avec une précision 0,9596 sur le jeu de test.
 Il a permis d’anticiper efficacement les arrêts de protection en se basant sur les tendances des capteurs.
 
-Structure du projet
 
-📦 projet-cobot/
-├── data/                 # Dataset UR3
-├── notebooks/            # Analyse, prétraitement, modélisation
-├── model/                # Modèle entraîné
-├── api/                  # API Flask
-│   ├── app.py
-│   └── model_loader.py
-├── Dockerfile
-├── requirements.txt
-└── README.md
+Pour déployer l'application, installez les dépendances (flask, tensorflow, scikit-learn, pandas, numpy, joblib) avec pip, puis exécutez python app.py. L'interface sera accessible sur http://localhost:5000. L'API expose deux endpoints : /predict (méthode POST, accepte un JSON contenant les données des capteurs et renvoie une prédiction binaire et sa probabilité) et /health (méthode GET, vérifie que le serveur fonctionne). Le modèle LSTM utilise 25 features prétraitées (normalisation MinMax, encodage des booléens) et des séquences de 10 pas de temps. En cas d'erreur, vérifiez que les données d'entrée respectent le format attendu et que les fichiers best_modelLSTM.h5, data_scaler.pkl et mean_values.pkl sont dans le bon répertoire.
