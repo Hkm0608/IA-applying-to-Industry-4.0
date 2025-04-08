@@ -41,6 +41,12 @@ Nous avons également comparé ses performances à d’autres modèles tels que 
 Arbre de décision
 
 Random Forest
+Nous avons testé plusieurs modèles, dont Random Forest (100% de précision) et Arbre de Décision (99%). Ces scores très élevés ont rapidement révélé un surapprentissage : les modèles mémorisaient les données d'entraînement sans bien généraliser.
+
+En comparaison, notre modèle LSTM a obtenu environ 96% de précision, mais avec des résultats plus stables sur des données nouvelles. Il est aussi mieux adapté aux données séquentielles, ce qui le rend plus pertinent pour notre usage.
+
+Malgré une précision légèrement inférieure, le LSTM a été choisi pour sa robustesse et sa capacité à mieux généraliser en conditions réelles.
+
 
 3. Optimisation
 Plusieurs tests ont été réalisés pour optimiser les hyperparamètres :
